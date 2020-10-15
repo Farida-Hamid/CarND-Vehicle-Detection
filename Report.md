@@ -47,10 +47,10 @@ These parameters are shown in the second code cell line 110. The hog function is
 The sliding window function is in lines 76-101 in the second code cell.
 Instead of searching the hole frame the Y axis of the image was restricted to [400, 560].
 
- <img src="images/cut.png" width="961" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/cut.png" width="961" alt="Combined Image" /> 
  <p style="text-align: center;"> Search area (above)</p>
 
- <img src="images/box.png" width="461" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/box.png" width="461" alt="Combined Image" /> 
  <p style="text-align: center;"> Sliding boxes drawn on an image (above)</p>
  
 By trial and error I endedup using the following parameters:
@@ -60,16 +60,16 @@ By trial and error I endedup using the following parameters:
 **Examples of test images:**
 
 The bounding boxes of all already detected cars are used when the heatmap is calculated. Those bounding boxes are regarded as if the car has been identified on that spot. That helps avoid flicker and loosing of already identified cars (lines 10-19 in the sixth code cell). Bellow are examples of images and theri resulting heatmap.
- <img src="images/hm.png" width="961" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/hm.png" width="961" alt="Combined Image" /> 
 
 
 Increasing window size gave b
 etter results. The following pictures were obtained with window size = 64X64:
- <img src="images/badex.png" width="961" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/badex.png" width="961" alt="Combined Image" /> 
  
  
 Increasing window size gave better results. The following pictures were obtained with window size = 70X70:
- <img src="images/ex.png" width="961" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/ex.png" width="961" alt="Combined Image" /> 
 
 
 ### Video Implementation
@@ -86,7 +86,7 @@ Video pipeline is in the sixth code cell. The sliding window search plus classif
 **Filter for false positives and combining overlapping bounding boxes**
 
 By increasing the window size (***xy_window***, line 6 in the sixth code cell), many false positives were removed. In the figure bellow, the calculations for the image on the left is done using ***xy_window=(70,70)***, ***xy_window=(70,70)***, and for the image on the right.
- <img src="images/wr.png" width="961" alt="Combined Image" /> 
+ <img src="CarND-Vehicle-Detection/images/wr.png" width="961" alt="Combined Image" /> 
  <p style="text-align: center;">  Example for results when changing window size (above)</p>
 
 
