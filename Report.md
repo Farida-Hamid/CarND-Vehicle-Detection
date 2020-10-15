@@ -2,7 +2,6 @@
 
 ## Project: Vehicle Detection and Tracking
 
-
 ### Vehicle Detection Project
 
 
@@ -16,6 +15,9 @@
 
 ### Histogram of Oriented Gradients (HOG)
 
+
+
+
 By trial and error I ended up using the following parameters:
 - LUV color space.
 - Number of orient = 12
@@ -23,7 +25,8 @@ By trial and error I ended up using the following parameters:
 - Number of cells per block = 1
 
 These parameters are shown in the second code cell line 110. The hog function is found in lines(10 - 27). The image bellow shows HOG visualization of a car and a not-car picture:
-![image1](./images/hog.pn)
+
+![image1](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/hog.PNG)
 
 **Hog Implementation:**
 - The dataset is obtained in the third code cell. 
@@ -40,12 +43,12 @@ These parameters are shown in the second code cell line 110. The hog function is
 The sliding window function is in lines 76-101 in the second code cell.
 Instead of searching the hole frame the Y axis of the image was restricted to [400, 560].
 
- ![image2](./images/cut.png)
+ ![image2](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/cut.png)
  <p style="text-align: center;"> Search area (above)</p>
 
+ ![image3](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/box.png)
  <p style="text-align: center;"> Sliding boxes drawn on an image (above)</p>
- ![image3](./images/box.pn)
-
+ 
 By trial and error I endedup using the following parameters:
 - Window size = (64,64)
 - 70% overlap.
@@ -53,16 +56,16 @@ By trial and error I endedup using the following parameters:
 **Examples of test images:**
 
 The bounding boxes of all already detected cars are used when the heatmap is calculated. Those bounding boxes are regarded as if the car has been identified on that spot. That helps avoid flicker and loosing of already identified cars (lines 10-19 in the sixth code cell). Bellow are examples of images and theri resulting heatmap.
- ![image4](./images/hm.pn)
+![image4](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/hm.png)
 
 
 Increasing window size gave b
 etter results. The following pictures were obtained with window size = 64X64:
-  ![image5](./images/badex.pn)
-
+![image5](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/badex.png)
+ 
  
 Increasing window size gave better results. The following pictures were obtained with window size = 70X70:
- ![image6](./images/ex.pn)
+![image6](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/ex.png)
 
 
 ### Video Implementation
@@ -79,8 +82,8 @@ Video pipeline is in the sixth code cell. The sliding window search plus classif
 **Filter for false positives and combining overlapping bounding boxes**
 
 By increasing the window size (***xy_window***, line 6 in the sixth code cell), many false positives were removed. In the figure bellow, the calculations for the image on the left is done using ***xy_window=(70,70)***, ***xy_window=(70,70)***, and for the image on the right.
-
- ![image7](./images/wr.pn)
+ ![image7](https://github.com/Farida-Hamid/CarND-Vehicle-Detection/blob/main/images/wr.png)
+ <p style="text-align: center;">  Example for results when changing window size (above)</p>
 
 
 ### Discussion
